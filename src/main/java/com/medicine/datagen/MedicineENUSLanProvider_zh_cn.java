@@ -184,6 +184,7 @@ public class MedicineENUSLanProvider_zh_cn extends FabricLanguageProvider {
         translationBuilder.add(MedicineItems.VIAL_OF_STRANGE_LIQUID, "神秘液体瓶");
         translationBuilder.add(MedicineItems.GOLD_RING, "金戒指");
         translationBuilder.add(MedicineItems.GOLDEN_FISH, "黄金鱼");
+        translationBuilder.add("tooltip.medicine.fishing_rod", "§7如果你看到这条信息，说明这个物品可能还没做完§r");
 
         // 创造模式物品栏
         translationBuilder.add("itemGroup.medicine_group", "药物");

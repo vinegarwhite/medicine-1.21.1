@@ -1,7 +1,7 @@
 package com.medicine.item;
 
 import com.medicine.Medicine;
-import com.medicine.item.custom.fishing.MedicineFishingRodItem;
+import com.medicine.item.custom.fishing.*;
 import net.minecraft.item.FishingRodItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -170,10 +170,10 @@ public class MedicineItems {
     public static final Item SILVER_BOOKMARK = registerItems("silver_bookmark", new Item(new Item.Settings().rarity(Rarity.EPIC)));
 
     // 钓鱼
-    public static final Item FIBERGLASS_FISHING_ROD = registerItems("fiberglass_fishing_rod", new MedicineFishingRodItem(new Item.Settings().maxDamage(64)));
-    public static final Item CARBON_FIBER_FISHING_ROD = registerItems("carbon_fiber_fishing_rod", new MedicineFishingRodItem(new Item.Settings().maxDamage(64)));
-    public static final Item TITANIUM_ALLOY_FISHING_ROD = registerItems("titanium_alloy_fishing_rod", new MedicineFishingRodItem(new Item.Settings().maxDamage(64)));
-    public static final Item SUPER_INVINCIBLE_FISHING_ROD = registerItems("super_invincible_fishing_rod", new MedicineFishingRodItem(new Item.Settings().maxDamage(64)));
+    public static final Item FIBERGLASS_FISHING_ROD = registerItems("fiberglass_fishing_rod", new FiberglassFishingRod(new Item.Settings().maxDamage(128)));
+    public static final Item CARBON_FIBER_FISHING_ROD = registerItems("carbon_fiber_fishing_rod", new CarbonFiberFishingRod(new Item.Settings().maxDamage(192)));
+    public static final Item TITANIUM_ALLOY_FISHING_ROD = registerItems("titanium_alloy_fishing_rod", new TitaniumAlloyFishingRod(new Item.Settings().maxDamage(256)));
+    public static final Item SUPER_INVINCIBLE_FISHING_ROD = registerItems("super_invincible_fishing_rod", new SuperInvincibleFishingRod(new Item.Settings().maxCount(1).fireproof()));
     public static final Item VIAL_OF_STRANGE_LIQUID = registerItems("vial_of_strange_liquid", new Item(new Item.Settings()));
     public static final Item GOLD_RING = registerItems("gold_ring", new Item(new Item.Settings()));
     public static final Item GOLDEN_FISH = registerItems("golden_fish", new Item(new Item.Settings().rarity(UNCOMMON)));
