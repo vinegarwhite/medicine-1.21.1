@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "medicine:item/pineapple_on_a_stick"
+  }
+}

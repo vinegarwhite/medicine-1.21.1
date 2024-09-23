@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "medicine:item/city_a_hospital_medical_report"
+  }
+}

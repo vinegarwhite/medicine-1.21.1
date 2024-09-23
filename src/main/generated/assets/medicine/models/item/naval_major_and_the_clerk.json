@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "medicine:item/naval_major_and_the_clerk"
+  }
+}

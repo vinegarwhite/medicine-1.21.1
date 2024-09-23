@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "medicine:item/gods_us_or_all_soldiers"
+  }
+}
