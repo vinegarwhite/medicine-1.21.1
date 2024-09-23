@@ -24,6 +24,7 @@ public class Medicine implements ModInitializer {
 
 		// 注册物品
 		MedicineItems.registerMedicineItems();
+		// 注册创造模式物品栏
 		MedicineItemGroups.registerMedicineItemGroups();
 
 		LOGGER.info("Hello Fabric world!");
