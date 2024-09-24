@@ -1,0 +1,6 @@
+{
+    "parent": "medicine:item/fiberglass_fishing_rod",
+    "textures": {
+        "layer0": "medicine:item/fiberglass_fishing_rod_cast"
+    }
+}
