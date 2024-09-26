@@ -178,13 +178,17 @@ public class MedicineENUSLanProvider_zh_cn extends FabricLanguageProvider {
 
         // 钓鱼
         translationBuilder.add(MedicineItems.FIBERGLASS_FISHING_ROD, "玻璃纤维钓竿");
+        translationBuilder.add("tooltip.medicine.fiberglass_fishing_rod", "能经受较大的弯折，但十分重");
         translationBuilder.add(MedicineItems.CARBON_FIBER_FISHING_ROD, "碳纤维钓竿");
+        translationBuilder.add("tooltip.medicine.carbon_fiber_fishing_rod", "又轻又结实，十分优秀的钓鱼竿");
         translationBuilder.add(MedicineItems.TITANIUM_ALLOY_FISHING_ROD, "钛合金钓竿");
+        translationBuilder.add("tooltip.medicine.titanium_alloy_fishing_rod", "宣传语是“永不空军”");
         translationBuilder.add(MedicineItems.SUPER_INVINCIBLE_FISHING_ROD, "超级无敌钓竿");
+        translationBuilder.add("tooltip.medicine.super_invincible_fishing_rod", "你已经用钱征服了这个钓鱼游戏，现在去干点别的吧？");
         translationBuilder.add(MedicineItems.VIAL_OF_STRANGE_LIQUID, "神秘液体瓶");
         translationBuilder.add(MedicineItems.GOLD_RING, "金戒指");
         translationBuilder.add(MedicineItems.GOLDEN_FISH, "黄金鱼");
-        translationBuilder.add("tooltip.medicine.fishing_rod", "§7如果你看到这条信息，说明这个物品可能还没做完§r");
+
 
         // 创造模式物品栏
         translationBuilder.add("itemGroup.medicine_group", "药物");
@@ -194,5 +198,8 @@ public class MedicineENUSLanProvider_zh_cn extends FabricLanguageProvider {
         translationBuilder.add("itemGroup.collectible_group", "收藏品");
         translationBuilder.add("itemGroup.special_collectible_group", "特殊藏品");
         translationBuilder.add("itemGroup.fishing_group", "钓鱼");
+
+        // 未完成提示
+        translationBuilder.add("tooltip.medicine.unfinished", "§7如果你看到这条信息，说明这个物品可能还没做完§r");
     }
 }
