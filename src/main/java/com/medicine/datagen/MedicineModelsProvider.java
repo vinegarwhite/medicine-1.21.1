@@ -177,9 +177,9 @@ public class MedicineModelsProvider extends FabricModelProvider {
 
         // 钓鱼
 //        itemModelGenerator.register(MedicineItems.FIBERGLASS_FISHING_ROD, Models.GENERATED);
-        itemModelGenerator.register(MedicineItems.CARBON_FIBER_FISHING_ROD, Models.GENERATED);
-        itemModelGenerator.register(MedicineItems.TITANIUM_ALLOY_FISHING_ROD, Models.GENERATED);
-        itemModelGenerator.register(MedicineItems.SUPER_INVINCIBLE_FISHING_ROD, Models.GENERATED);
+//        itemModelGenerator.register(MedicineItems.CARBON_FIBER_FISHING_ROD, Models.GENERATED);
+//        itemModelGenerator.register(MedicineItems.TITANIUM_ALLOY_FISHING_ROD, Models.GENERATED);
+//        itemModelGenerator.register(MedicineItems.SUPER_INVINCIBLE_FISHING_ROD, Models.GENERATED);
         itemModelGenerator.register(MedicineItems.VIAL_OF_STRANGE_LIQUID, Models.GENERATED);
         itemModelGenerator.register(MedicineItems.GOLD_RING, Models.GENERATED);
         itemModelGenerator.register(MedicineItems.GOLDEN_FISH, Models.GENERATED);

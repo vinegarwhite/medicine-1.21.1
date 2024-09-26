@@ -1,0 +1,6 @@
+{
+  "parent": "medicine:item/carbon_fiber_fishing_rod",
+  "textures": {
+    "layer0": "medicine:item/carbon_fiber_fishing_rod_cast"
+  }
+}

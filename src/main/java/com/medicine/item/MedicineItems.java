@@ -2,6 +2,9 @@ package com.medicine.item;
 
 import com.medicine.Medicine;
 import com.medicine.item.custom.fishing.*;
+import net.minecraft.component.ComponentType;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.CustomModelDataComponent;
 import net.minecraft.item.FishingRodItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;

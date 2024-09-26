@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:item/handheld_rod",
+  "textures": {
+    "layer0": "medicine:item/carbon_fiber_fishing_rod"
+  },
+  "overrides": [
+    {
+      "predicate": { "custom_model_data": 1 },
+      "model": "medicine:item/carbon_fiber_fishing_rod_cast"
+    }
+  ]
+}

@@ -1,10 +1,14 @@
 package com.medicine.item.custom.fishing;
 
+import net.fabricmc.fabric.impl.recipe.ingredient.builtin.ComponentsIngredient;
+import net.minecraft.component.*;
+import net.minecraft.component.type.CustomModelDataComponent;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.FishingBobberEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -25,6 +29,10 @@ public class FiberglassFishingRod extends MedicineFishingRodItem {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack itemStack = user.getStackInHand(hand);
 
+
+
+
+        // 如果已经抛出鱼钩
         if (user.fishHook != null) {
             if (!world.isClient) {
                 int i = user.fishHook.use(itemStack);
@@ -39,6 +47,13 @@ public class FiberglassFishingRod extends MedicineFishingRodItem {
                     1.0F,
                     0.4F / (world.getRandom().nextFloat() * 0.4F + 0.8F)
             );
+
+            // 修改custom_model_data的值为0 此时图标为未抛勾
+            ComponentMap components = itemStack.getComponents();
+            ComponentMap.Builder builder = ComponentMap.builder();;
+            builder.addAll(components);
+            builder.add(DataComponentTypes.CUSTOM_MODEL_DATA, new CustomModelDataComponent(0));
+            itemStack.applyComponentsFrom(builder.build());
 
             user.emitGameEvent(GameEvent.ITEM_INTERACT_FINISH);
         } else {
@@ -60,6 +75,13 @@ public class FiberglassFishingRod extends MedicineFishingRodItem {
                     j = 29 * 20;
                 world.spawnEntity(new FishingBobberEntity(user, world, k, j));
             }
+
+            // 修改custom_model_data的值为1 此时图标为已抛勾
+            ComponentMap components = itemStack.getComponents();
+            ComponentMap.Builder builder = ComponentMap.builder();;
+            builder.addAll(components);
+            builder.add(DataComponentTypes.CUSTOM_MODEL_DATA, new CustomModelDataComponent(1));
+            itemStack.applyComponentsFrom(builder.build());
 
             user.incrementStat(Stats.USED.getOrCreateStat(this));
             user.emitGameEvent(GameEvent.ITEM_INTERACT_START);

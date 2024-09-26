@@ -5,9 +5,7 @@
     },
     "overrides": [
         {
-            "predicate": {
-                "cast": 1
-            },
+            "predicate": { "custom_model_data": 1 },
             "model": "medicine:item/fiberglass_fishing_rod_cast"
         }
     ]
