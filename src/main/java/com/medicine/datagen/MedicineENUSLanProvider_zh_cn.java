@@ -152,7 +152,7 @@ public class MedicineENUSLanProvider_zh_cn extends FabricLanguageProvider {
         translationBuilder.add(MedicineItems.RUBBER_DUCK, "小黄鸭");
         translationBuilder.add(MedicineItems.SUNSHINE_DOLL, "晴天娃娃");
         translationBuilder.add(MedicineItems.ADVANCED_SPORTS_GUIDE, "高级运动指南");
-        translationBuilder.add(MedicineItems.TUNGSTEN_ALLOY_ORNAMENT, "钨合金装饰品");
+        translationBuilder.add(MedicineItems.TUNGSTEN_ALLOY_ORNAMENT, "钨合金摆件");
         translationBuilder.add(MedicineItems.SOFT_PILLOW, "柔软枕头");
         translationBuilder.add(MedicineItems.ORANGE_BOOKMARK, "橘色书签");
         translationBuilder.add(MedicineItems.FIDGET_SPINNER, "指尖陀螺");
