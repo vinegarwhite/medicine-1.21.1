@@ -1,5 +1,6 @@
 package com.medicine.item.custom.fishing;
 
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.component.ComponentMap;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.CustomModelDataComponent;
@@ -90,7 +91,10 @@ public class SuperInvincibleFishingRod extends MedicineFishingRodItem{
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-//        super.appendTooltip(stack, context, tooltip, type);
-        tooltip.add(Text.translatable("tooltip.medicine.super_invincible_fishing_rod"));
+        if(!Screen.hasShiftDown()) {
+            tooltip.add(Text.translatable("tooltip.medicine.super_invincible_fishing_rod"));
+        }else{
+            tooltip.add(Text.translatable("tooltip.medicine.super_invincible_fishing_rod_shift"));
+        }
     }
 }

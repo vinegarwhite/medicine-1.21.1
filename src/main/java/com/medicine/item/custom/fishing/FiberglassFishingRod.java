@@ -1,6 +1,7 @@
 package com.medicine.item.custom.fishing;
 
 import net.fabricmc.fabric.impl.recipe.ingredient.builtin.ComponentsIngredient;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.component.*;
 import net.minecraft.component.type.CustomModelDataComponent;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -96,7 +97,10 @@ public class FiberglassFishingRod extends MedicineFishingRodItem {
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-//        super.appendTooltip(stack, context, tooltip, type);
-        tooltip.add(Text.translatable("tooltip.medicine.fiberglass_fishing_rod"));
+    if(!Screen.hasShiftDown()) {
+            tooltip.add(Text.translatable("tooltip.medicine.fiberglass_fishing_rod"));
+        }else{
+            tooltip.add(Text.translatable("tooltip.medicine.fiberglass_fishing_rod_shift"));
+        }
     }
 }
