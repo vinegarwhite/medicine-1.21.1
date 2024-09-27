@@ -7,7 +7,7 @@ import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 
 public class MedicineItemTags {
-    public static final TagKey<Item> FISHING_ROD = of("wool");
+    public static final TagKey<Item> MEDICINE_FISHING_ROD = of("medicine_fishing_rod");
 
 
     private static TagKey<Item> of(String id) {

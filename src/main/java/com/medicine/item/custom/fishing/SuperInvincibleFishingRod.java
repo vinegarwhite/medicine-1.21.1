@@ -2,6 +2,7 @@ package com.medicine.item.custom.fishing;
 
 import com.medicine.item.MedicineItems;
 import com.medicine.mixin.CaughtFishMixin;
+import com.medicine.tags.MedicineItemTags;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.component.ComponentMap;
 import net.minecraft.component.DataComponentTypes;
@@ -28,7 +29,7 @@ import java.util.List;
 /**
  * 超级无敌钓竿
  */
-public class SuperInvincibleFishingRod extends MedicineFishingRodItem{
+public class SuperInvincibleFishingRod extends MedicineFishingRodItem {
     public SuperInvincibleFishingRod(Settings settings) {
         super(settings);
     }
@@ -59,11 +60,7 @@ public class SuperInvincibleFishingRod extends MedicineFishingRodItem{
             );
 
             // 控制钓竿图标为收起状态
-            ComponentMap components = itemStack.getComponents();
-            ComponentMap.Builder builder = ComponentMap.builder();;
-            builder.addAll(components);
-            builder.add(DataComponentTypes.CUSTOM_MODEL_DATA, new CustomModelDataComponent(0));
-            itemStack.applyComponentsFrom(builder.build());
+            MedicineFishingRodItem.retrievingRod(itemStack);
 
             user.emitGameEvent(GameEvent.ITEM_INTERACT_FINISH);
         }
@@ -83,7 +80,7 @@ public class SuperInvincibleFishingRod extends MedicineFishingRodItem{
                 int k = EnchantmentHelper.getFishingLuckBonus(serverWorld, itemStack, user);
                 // 修改j的值让钓鱼时间缩短
                 j += 25 * 20;
-                if(j >=29 * 20)
+                if (j >= 29 * 20)
                     j = 29 * 20;
                 world.spawnEntity(new FishingBobberEntity(user, world, k, j));
 
@@ -94,7 +91,8 @@ public class SuperInvincibleFishingRod extends MedicineFishingRodItem{
 
             // 控制钓竿图标为抛出状态
             ComponentMap components = itemStack.getComponents();
-            ComponentMap.Builder builder = ComponentMap.builder();;
+            ComponentMap.Builder builder = ComponentMap.builder();
+            ;
             builder.addAll(components);
             builder.add(DataComponentTypes.CUSTOM_MODEL_DATA, new CustomModelDataComponent(1));
             itemStack.applyComponentsFrom(builder.build());
@@ -110,12 +108,21 @@ public class SuperInvincibleFishingRod extends MedicineFishingRodItem{
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         super.inventoryTick(stack, world, entity, slot, selected);
+
         PlayerEntity player = (PlayerEntity) entity;
         Hand hand = player.getActiveHand();
 
-        // 每0.5秒判断一次浮标存在且钓到鱼的情况
-        if(player.fishHook != null && world.getTime() >= lastActionTime + 10 && ((CaughtFishMixin) player.fishHook).getCaughtFish()) {
-            // 检查浮标是否钓到鱼 如果钓到则调用use方法进行收杆
+        // 保证超级无敌钓竿只有拿在手上才能自动钓鱼 删掉的话则只要超级无敌钓竿在背包里 任意鱼竿都能自动钓鱼
+        if (!player.getMainHandStack().isOf(this) && !player.getOffHandStack().isOf(this))
+            return;
+        // 副手拿着超级无敌钓竿且左手拿着其他钓竿的情况下停用自动钓鱼 不然的话就变成主手的鱼竿自动钓鱼了 看起来会怪怪的
+        if (player.getOffHandStack().isOf(this) && player.getMainHandStack().isIn(MedicineItemTags.MEDICINE_FISHING_ROD)
+                && !player.getMainHandStack().isOf(this))
+            return;
+
+        // 每0.5秒判断一次是否钓到鱼 ((CaughtFishMixin) player.fishHook).getCaughtFish()表示是否钓到鱼
+        if (player.fishHook != null && world.getTime() >= lastActionTime + 10 && ((CaughtFishMixin) player.fishHook).getCaughtFish()) {
+            // 钓到鱼之后收杆 castAgain用于控制是否继续抛竿 lastActionTime与世界时间进行对比来控制抛竿间隔
             if (!world.isClient) {
                 this.use(world, player, hand);
                 castAgain = true;
@@ -123,21 +130,9 @@ public class SuperInvincibleFishingRod extends MedicineFishingRodItem{
             }
         }
         // 浮标不存在则尝试判断是否需要再次抛竿
-        if(player.fishHook == null && !world.isClient){
-
-            // 用于应对玩家没有收杆就切换到别的物品的情况 切换为收杆状态
-            for (int i = 0; i < player.getInventory().main.size(); i++) {
-                ItemStack itemStack = player.getInventory().main.get(i);
-                if (itemStack.isOf(MedicineItems.SUPER_INVINCIBLE_FISHING_ROD)) {
-                    ComponentMap components = itemStack.getComponents();
-                    ComponentMap.Builder builder = ComponentMap.builder();
-                    builder.addAll(components);
-                    builder.add(DataComponentTypes.CUSTOM_MODEL_DATA, new CustomModelDataComponent(0));
-                    itemStack.applyComponentsFrom(builder.build());
-                }
-            }
-
-            if (castAgain && world.getTime() >= lastActionTime + 10){
+        if (player.fishHook == null && !world.isClient) {
+            // castAgain用于控制是否继续抛竿 lastActionTime与世界时间进行对比来控制抛竿间隔
+            if (castAgain && world.getTime() >= lastActionTime + 10) {
                 this.use(world, player, hand);
                 castAgain = false;
                 lastActionTime = world.getTime();
@@ -147,9 +142,9 @@ public class SuperInvincibleFishingRod extends MedicineFishingRodItem{
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        if(!Screen.hasShiftDown()) {
+        if (!Screen.hasShiftDown()) {
             tooltip.add(Text.translatable("tooltip.medicine.super_invincible_fishing_rod"));
-        }else{
+        } else {
             tooltip.add(Text.translatable("tooltip.medicine.super_invincible_fishing_rod_shift"));
         }
     }

@@ -2,6 +2,7 @@ package com.medicine.mixin;
 
 import com.medicine.item.MedicineItems;
 import com.medicine.item.custom.fishing.MedicineFishingRodItem;
+import com.medicine.tags.MedicineItemTags;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.FishingBobberEntity;
@@ -35,11 +36,7 @@ public class FishingBobberEntityMixin {
     @ModifyVariable(method = "removeIfInvalid", at = @At("STORE"), ordinal = 0)
     private boolean modifyMainHandFishingRodCheck(boolean bl, PlayerEntity player) {
         ItemStack itemStack = player.getMainHandStack();
-        return itemStack.isOf(Items.FISHING_ROD) ||
-                itemStack.isOf(MedicineItems.FIBERGLASS_FISHING_ROD) ||
-                itemStack.isOf(MedicineItems.CARBON_FIBER_FISHING_ROD) ||
-                itemStack.isOf(MedicineItems.TITANIUM_ALLOY_FISHING_ROD) ||
-                itemStack.isOf(MedicineItems.SUPER_INVINCIBLE_FISHING_ROD);
+        return itemStack.isOf(Items.FISHING_ROD) || itemStack.isIn(MedicineItemTags.MEDICINE_FISHING_ROD);
     }
 
     // bl2表示副手是否拿着鱼竿

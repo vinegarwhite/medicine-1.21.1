@@ -96,27 +96,6 @@ public class FiberglassFishingRod extends MedicineFishingRodItem {
         return TypedActionResult.success(itemStack, world.isClient());
     }
 
-    @Override
-    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-        PlayerEntity player = (PlayerEntity) entity;
-
-        ItemStack b1 = player.getMainHandStack();
-        ItemStack b2 = player.getOffHandStack();
-        if(!b1.isOf(this) && !b2.isOf(this)) {
-
-            // 用于应对玩家没有收杆就切换到别的物品的情况 切换为收杆状态
-            for (int i = 0; i < player.getInventory().main.size(); i++) {
-                ItemStack itemStack = player.getInventory().main.get(i);
-                if (itemStack.isOf(this)) {
-                    ComponentMap components = itemStack.getComponents();
-                    ComponentMap.Builder builder = ComponentMap.builder();
-                    builder.addAll(components);
-                    builder.add(DataComponentTypes.CUSTOM_MODEL_DATA, new CustomModelDataComponent(0));
-                    itemStack.applyComponentsFrom(builder.build());
-                }
-            }
-        }
-    }
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {

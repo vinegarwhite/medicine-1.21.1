@@ -1,6 +1,7 @@
 package com.medicine.mixin;
 
 import com.medicine.item.MedicineItems;
+import com.medicine.tags.MedicineItemTags;
 import net.minecraft.client.render.entity.FishingBobberEntityRenderer;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -28,11 +29,7 @@ public class FishingBobberEntityRendererMixin {
 
         // 主手里面为钓鱼竿 则钓鱼线从主手方向抛出
         // 目前判断钓鱼竿还是直接判断物品 等以后写了tag以后会进行修改 判断是否有鱼钩tag
-        if(itemStack.isOf(Items.FISHING_ROD) ||
-                itemStack.isOf(MedicineItems.FIBERGLASS_FISHING_ROD) ||
-                itemStack.isOf(MedicineItems.CARBON_FIBER_FISHING_ROD) ||
-                itemStack.isOf(MedicineItems.TITANIUM_ALLOY_FISHING_ROD) ||
-                itemStack.isOf(MedicineItems.SUPER_INVINCIBLE_FISHING_ROD))
+        if(itemStack.isOf(Items.FISHING_ROD) || itemStack.isIn(MedicineItemTags.MEDICINE_FISHING_ROD))
             return i;
         else
             return -i;
