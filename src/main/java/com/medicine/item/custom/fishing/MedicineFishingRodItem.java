@@ -28,15 +28,6 @@ import java.util.List;
 
 /**
  * 模组里面钓鱼竿的父类
- * 其中材质切换的部分 原版可以控制模型的json里面用
- * "overrides": [
- *         {
- *             "predicate": {
- *                 "cast": 1
- *             },
- *             "model": "item/fishing_rod_cast"
- *         }
- *     ]来切换材质 但是我花了两天也没找到让cast兼容模组钓鱼竿的办法
  */
 public class MedicineFishingRodItem extends FishingRodItem {
     public MedicineFishingRodItem(Settings settings) {

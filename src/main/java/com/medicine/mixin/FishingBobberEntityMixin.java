@@ -32,7 +32,6 @@ public class FishingBobberEntityMixin {
     @Shadow @Final private static TrackedData<Boolean> CAUGHT_FISH;
 
     // bl表示主手是否拿着鱼竿 为其添加模组鱼竿的判断
-    // 目前还是以一个一个物品的方式判断的 等以后写了添加Tag的代码之后记得修改一下
     @ModifyVariable(method = "removeIfInvalid", at = @At("STORE"), ordinal = 0)
     private boolean modifyMainHandFishingRodCheck(boolean bl, PlayerEntity player) {
         ItemStack itemStack = player.getMainHandStack();

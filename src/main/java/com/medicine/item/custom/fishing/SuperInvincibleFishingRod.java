@@ -43,7 +43,6 @@ public class SuperInvincibleFishingRod extends MedicineFishingRodItem {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack itemStack = user.getStackInHand(hand);
 
-        // 使用鱼竿时已经抛竿 此时操作为右击收杆
         if (user.fishHook != null) {
             if (!world.isClient) {
                 int i = user.fishHook.use(itemStack);
@@ -61,7 +60,6 @@ public class SuperInvincibleFishingRod extends MedicineFishingRodItem {
 
             user.emitGameEvent(GameEvent.ITEM_INTERACT_FINISH);
         }
-        // 使用鱼竿时未抛竿 此时操作为右击抛竿
         else {
             world.playSound(
                     null,
@@ -83,7 +81,6 @@ public class SuperInvincibleFishingRod extends MedicineFishingRodItem {
 
             }
 
-            // 停用再次抛竿
             castAgain = false;
 
             user.incrementStat(Stats.USED.getOrCreateStat(this));

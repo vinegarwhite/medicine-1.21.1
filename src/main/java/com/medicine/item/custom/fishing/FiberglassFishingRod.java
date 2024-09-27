@@ -37,7 +37,6 @@ public class FiberglassFishingRod extends MedicineFishingRodItem {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack itemStack = user.getStackInHand(hand);
 
-        // 如果已经抛出鱼钩
         if (user.fishHook != null) {
             if (!world.isClient) {
                 int i = user.fishHook.use(itemStack);

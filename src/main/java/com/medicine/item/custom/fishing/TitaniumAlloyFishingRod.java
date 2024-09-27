@@ -80,7 +80,6 @@ public class TitaniumAlloyFishingRod extends MedicineFishingRodItem{
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-//        super.appendTooltip(stack, context, tooltip, type);
         if(!Screen.hasShiftDown()) {
             tooltip.add(Text.translatable("tooltip.medicine.titanium_alloy_fishing_rod"));
         }else{
