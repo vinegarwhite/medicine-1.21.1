@@ -1,10 +1,13 @@
 package com.medicine.item.custom.fishing;
 
+import com.medicine.item.MedicineItems;
+import com.medicine.mixin.FishingBobberEntityMixin;
 import net.fabricmc.fabric.impl.recipe.ingredient.builtin.ComponentsIngredient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.component.*;
 import net.minecraft.component.type.CustomModelDataComponent;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.FishingBobberEntity;
@@ -33,9 +36,6 @@ public class FiberglassFishingRod extends MedicineFishingRodItem {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack itemStack = user.getStackInHand(hand);
-
-
-
 
         // 如果已经抛出鱼钩
         if (user.fishHook != null) {
@@ -79,6 +79,7 @@ public class FiberglassFishingRod extends MedicineFishingRodItem {
                 if(j >=29 * 20)
                     j = 29 * 20;
                 world.spawnEntity(new FishingBobberEntity(user, world, k, j));
+
             }
 
             // 修改custom_model_data的值为1 此时图标为已抛勾
@@ -93,6 +94,28 @@ public class FiberglassFishingRod extends MedicineFishingRodItem {
         }
 
         return TypedActionResult.success(itemStack, world.isClient());
+    }
+
+    @Override
+    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+        PlayerEntity player = (PlayerEntity) entity;
+
+        ItemStack b1 = player.getMainHandStack();
+        ItemStack b2 = player.getOffHandStack();
+        if(!b1.isOf(this) && !b2.isOf(this)) {
+
+            // 用于应对玩家没有收杆就切换到别的物品的情况 切换为收杆状态
+            for (int i = 0; i < player.getInventory().main.size(); i++) {
+                ItemStack itemStack = player.getInventory().main.get(i);
+                if (itemStack.isOf(this)) {
+                    ComponentMap components = itemStack.getComponents();
+                    ComponentMap.Builder builder = ComponentMap.builder();
+                    builder.addAll(components);
+                    builder.add(DataComponentTypes.CUSTOM_MODEL_DATA, new CustomModelDataComponent(0));
+                    itemStack.applyComponentsFrom(builder.build());
+                }
+            }
+        }
     }
 
     @Override

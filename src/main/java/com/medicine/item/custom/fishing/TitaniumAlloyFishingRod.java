@@ -1,10 +1,12 @@
 package com.medicine.item.custom.fishing;
 
+import com.medicine.item.MedicineItems;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.component.ComponentMap;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.CustomModelDataComponent;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.FishingBobberEntity;
@@ -87,6 +89,26 @@ public class TitaniumAlloyFishingRod extends MedicineFishingRodItem{
         }
 
         return TypedActionResult.success(itemStack, world.isClient());
+    }
+
+    @Override
+    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+        PlayerEntity player = (PlayerEntity) entity;
+
+        if(player.fishHook == null && !world.isClient) {
+
+            // 用于应对玩家没有收杆就切换到别的物品的情况 切换为收杆状态
+            for (int i = 0; i < player.getInventory().main.size(); i++) {
+                ItemStack itemStack = player.getInventory().main.get(i);
+                if (itemStack.isOf(MedicineItems.TITANIUM_ALLOY_FISHING_ROD)) {
+                    ComponentMap components = itemStack.getComponents();
+                    ComponentMap.Builder builder = ComponentMap.builder();
+                    builder.addAll(components);
+                    builder.add(DataComponentTypes.CUSTOM_MODEL_DATA, new CustomModelDataComponent(0));
+                    itemStack.applyComponentsFrom(builder.build());
+                }
+            }
+        }
     }
 
     @Override

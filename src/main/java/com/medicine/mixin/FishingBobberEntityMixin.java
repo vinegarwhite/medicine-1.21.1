@@ -2,12 +2,16 @@ package com.medicine.mixin;
 
 import com.medicine.item.MedicineItems;
 import com.medicine.item.custom.fishing.MedicineFishingRodItem;
+import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.FishingBobberEntity;
 import net.minecraft.item.FishingRodItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.gen.Accessor;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
@@ -23,6 +27,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(FishingBobberEntity.class)
 public class FishingBobberEntityMixin {
+
+    @Shadow @Final private static TrackedData<Boolean> CAUGHT_FISH;
 
     // bl表示主手是否拿着鱼竿 为其添加模组鱼竿的判断
     // 目前还是以一个一个物品的方式判断的 等以后写了添加Tag的代码之后记得修改一下
@@ -47,3 +53,4 @@ public class FishingBobberEntityMixin {
                 itemStack.isOf(MedicineItems.SUPER_INVINCIBLE_FISHING_ROD);
     }
 }
+

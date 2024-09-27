@@ -2,6 +2,7 @@ package com.medicine;
 
 import com.medicine.item.MedicineItemGroups;
 import com.medicine.item.MedicineItems;
+import com.medicine.tags.MedicineItemTags;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -24,6 +25,8 @@ public class Medicine implements ModInitializer {
 
 		// 注册物品
 		MedicineItems.registerMedicineItems();
+		// 注册物品Tag
+		MedicineItemTags.registerMedicineTags();
 		// 注册创造模式物品栏
 		MedicineItemGroups.registerMedicineItemGroups();
 
