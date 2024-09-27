@@ -5,7 +5,9 @@
   },
   "overrides": [
     {
-      "predicate": { "custom_model_data": 1 },
+      "predicate": {
+        "medicine:carbon_fiber_fishing_rod_cast": 1
+      },
       "model": "medicine:item/carbon_fiber_fishing_rod_cast"
     }
   ]

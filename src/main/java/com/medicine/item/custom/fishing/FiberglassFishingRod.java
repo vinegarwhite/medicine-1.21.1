@@ -53,13 +53,6 @@ public class FiberglassFishingRod extends MedicineFishingRodItem {
                     0.4F / (world.getRandom().nextFloat() * 0.4F + 0.8F)
             );
 
-            // 修改custom_model_data的值为0 此时图标为未抛勾
-            ComponentMap components = itemStack.getComponents();
-            ComponentMap.Builder builder = ComponentMap.builder();;
-            builder.addAll(components);
-            builder.add(DataComponentTypes.CUSTOM_MODEL_DATA, new CustomModelDataComponent(0));
-            itemStack.applyComponentsFrom(builder.build());
-
             user.emitGameEvent(GameEvent.ITEM_INTERACT_FINISH);
         } else {
             world.playSound(
@@ -81,13 +74,6 @@ public class FiberglassFishingRod extends MedicineFishingRodItem {
                 world.spawnEntity(new FishingBobberEntity(user, world, k, j));
 
             }
-
-            // 修改custom_model_data的值为1 此时图标为已抛勾
-            ComponentMap components = itemStack.getComponents();
-            ComponentMap.Builder builder = ComponentMap.builder();;
-            builder.addAll(components);
-            builder.add(DataComponentTypes.CUSTOM_MODEL_DATA, new CustomModelDataComponent(1));
-            itemStack.applyComponentsFrom(builder.build());
 
             user.incrementStat(Stats.USED.getOrCreateStat(this));
             user.emitGameEvent(GameEvent.ITEM_INTERACT_START);

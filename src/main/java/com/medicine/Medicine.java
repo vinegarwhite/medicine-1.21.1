@@ -2,6 +2,7 @@ package com.medicine;
 
 import com.medicine.item.MedicineItemGroups;
 import com.medicine.item.MedicineItems;
+import com.medicine.predicate.MedicineModelPredicate;
 import com.medicine.tags.MedicineItemTags;
 import net.fabricmc.api.ModInitializer;
 
@@ -29,6 +30,8 @@ public class Medicine implements ModInitializer {
 		MedicineItemTags.registerMedicineTags();
 		// 注册创造模式物品栏
 		MedicineItemGroups.registerMedicineItemGroups();
+		// 注册predicate
+		MedicineModelPredicate.registerMedicineModelPredicate();
 
 		LOGGER.info("Hello Fabric world!");
 	}

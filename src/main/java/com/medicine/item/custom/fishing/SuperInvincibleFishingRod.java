@@ -59,9 +59,6 @@ public class SuperInvincibleFishingRod extends MedicineFishingRodItem {
                     0.4F / (world.getRandom().nextFloat() * 0.4F + 0.8F)
             );
 
-            // 控制钓竿图标为收起状态
-            MedicineFishingRodItem.retrievingRod(itemStack);
-
             user.emitGameEvent(GameEvent.ITEM_INTERACT_FINISH);
         }
         // 使用鱼竿时未抛竿 此时操作为右击抛竿
@@ -88,14 +85,6 @@ public class SuperInvincibleFishingRod extends MedicineFishingRodItem {
 
             // 停用再次抛竿
             castAgain = false;
-
-            // 控制钓竿图标为抛出状态
-            ComponentMap components = itemStack.getComponents();
-            ComponentMap.Builder builder = ComponentMap.builder();
-            ;
-            builder.addAll(components);
-            builder.add(DataComponentTypes.CUSTOM_MODEL_DATA, new CustomModelDataComponent(1));
-            itemStack.applyComponentsFrom(builder.build());
 
             user.incrementStat(Stats.USED.getOrCreateStat(this));
             user.emitGameEvent(GameEvent.ITEM_INTERACT_START);
