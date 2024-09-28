@@ -1,6 +1,5 @@
 package com.medicine.mixin;
 
-import com.medicine.item.MedicineItems;
 import com.medicine.tags.MedicineItemTags;
 import net.minecraft.client.render.entity.FishingBobberEntityRenderer;
 import net.minecraft.entity.player.PlayerEntity;

@@ -1,19 +1,12 @@
 package com.medicine.item.custom.fishing;
 
-import com.medicine.item.MedicineItems;
-import com.medicine.mixin.FishingBobberEntityMixin;
-import net.fabricmc.fabric.impl.recipe.ingredient.builtin.ComponentsIngredient;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.component.*;
-import net.minecraft.component.type.CustomModelDataComponent;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.FishingBobberEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipType;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;

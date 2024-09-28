@@ -1,12 +1,8 @@
 package com.medicine.item.custom.fishing;
 
-import com.medicine.item.MedicineItems;
 import com.medicine.mixin.CaughtFishMixin;
 import com.medicine.tags.MedicineItemTags;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.component.ComponentMap;
-import net.minecraft.component.DataComponentTypes;
-import net.minecraft.component.type.CustomModelDataComponent;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;

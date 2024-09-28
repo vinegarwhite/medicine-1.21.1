@@ -1,7 +1,6 @@
 package com.medicine.item;
 
 import com.medicine.Medicine;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;

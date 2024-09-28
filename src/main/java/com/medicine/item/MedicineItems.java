@@ -1,11 +1,10 @@
 package com.medicine.item;
 
 import com.medicine.Medicine;
-import com.medicine.item.custom.fishing.*;
-import net.minecraft.component.ComponentType;
-import net.minecraft.component.DataComponentTypes;
-import net.minecraft.component.type.CustomModelDataComponent;
-import net.minecraft.item.FishingRodItem;
+import com.medicine.item.custom.fishing.CarbonFiberFishingRod;
+import com.medicine.item.custom.fishing.FiberglassFishingRod;
+import com.medicine.item.custom.fishing.SuperInvincibleFishingRod;
+import com.medicine.item.custom.fishing.TitaniumAlloyFishingRod;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;

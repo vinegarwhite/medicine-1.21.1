@@ -4,8 +4,8 @@ import com.medicine.item.MedicineItemGroups;
 import com.medicine.item.MedicineItems;
 import com.medicine.predicate.MedicineModelPredicate;
 import com.medicine.tags.MedicineItemTags;
+import com.medicine.util.MedicineLootTableModifiers;
 import net.fabricmc.api.ModInitializer;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -32,7 +32,8 @@ public class Medicine implements ModInitializer {
 		MedicineItemGroups.registerMedicineItemGroups();
 		// 注册predicate
 		MedicineModelPredicate.registerMedicineModelPredicate();
-
+		// 注册战利品表
+		MedicineLootTableModifiers.registerMedicineLootTable();
 		LOGGER.info("Hello Fabric world!");
 	}
 }
