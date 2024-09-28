@@ -1,6 +1,7 @@
 package com.medicine.item;
 
 import com.medicine.Medicine;
+import com.medicine.component.MedicineFoodComponents;
 import com.medicine.item.custom.fishing.CarbonFiberFishingRod;
 import com.medicine.item.custom.fishing.FiberglassFishingRod;
 import com.medicine.item.custom.fishing.SuperInvincibleFishingRod;
@@ -18,24 +19,24 @@ import static net.minecraft.util.Rarity.UNCOMMON;
 public class MedicineItems {
 
     // 药物
-    public static final Item ALPHA_PILL = registerItems("alpha_pill", new Item(new Item.Settings()));
-    public static final Item BETA_PILL = registerItems("beta_pill", new Item(new Item.Settings()));
-    public static final Item GAMMA_PILL = registerItems("gamma_pill", new Item(new Item.Settings()));
-    public static final Item DELTA_PILL = registerItems("delta_pill", new Item(new Item.Settings()));
-    public static final Item SLEEPING_PILLS = registerItems("sleeping_pills", new Item(new Item.Settings()));
-    public static final Item COLD_MEDICINE = registerItems("cold_medicine", new Item(new Item.Settings()));
-    public static final Item HEADACHE_PILLS = registerItems("headache_pills", new Item(new Item.Settings()));
-    public static final Item PAIN_KILLERS = registerItems("pain_killers", new Item(new Item.Settings()));
-    public static final Item VITAMIN_TABLETS = registerItems("vitamin_tablets", new Item(new Item.Settings()));
-    public static final Item STOMACH_MEDICINE = registerItems("stomach_medicine", new Item(new Item.Settings()));
-    public static final Item AMPHETAMINE = registerItems("amphetamine", new Item(new Item.Settings()));
-    public static final Item ETIZOLAM = registerItems("etizolam", new Item(new Item.Settings()));
-    public static final Item ASPIRIN = registerItems("aspirin", new Item(new Item.Settings()));
-    public static final Item PROPOXYPHENE = registerItems("propoxyphene", new Item(new Item.Settings()));
-    public static final Item RITALIN = registerItems("ritalin", new Item(new Item.Settings()));
-    public static final Item ANTI_BIOTICS = registerItems("anti_biotics", new Item(new Item.Settings()));
-    public static final Item ANTI_DEPRESSANTS = registerItems("anti_depressants", new Item(new Item.Settings()));
-    public static final Item PLACEBO = registerItems("placebo", new Item(new Item.Settings()));
+    public static final Item ALPHA_PILL = registerItems("alpha_pill", new Item(new Item.Settings().food(MedicineFoodComponents.MEDICINE)));
+    public static final Item BETA_PILL = registerItems("beta_pill", new Item(new Item.Settings().food(MedicineFoodComponents.MEDICINE)));
+    public static final Item GAMMA_PILL = registerItems("gamma_pill", new Item(new Item.Settings().food(MedicineFoodComponents.MEDICINE)));
+    public static final Item DELTA_PILL = registerItems("delta_pill", new Item(new Item.Settings().food(MedicineFoodComponents.MEDICINE)));
+    public static final Item SLEEPING_PILLS = registerItems("sleeping_pills", new Item(new Item.Settings().food(MedicineFoodComponents.MEDICINE)));
+    public static final Item COLD_MEDICINE = registerItems("cold_medicine", new Item(new Item.Settings().food(MedicineFoodComponents.MEDICINE)));
+    public static final Item HEADACHE_PILLS = registerItems("headache_pills", new Item(new Item.Settings().food(MedicineFoodComponents.MEDICINE)));
+    public static final Item PAIN_KILLERS = registerItems("pain_killers", new Item(new Item.Settings().food(MedicineFoodComponents.MEDICINE)));
+    public static final Item VITAMIN_TABLETS = registerItems("vitamin_tablets", new Item(new Item.Settings().food(MedicineFoodComponents.MEDICINE)));
+    public static final Item STOMACH_MEDICINE = registerItems("stomach_medicine", new Item(new Item.Settings().food(MedicineFoodComponents.MEDICINE)));
+    public static final Item AMPHETAMINE = registerItems("amphetamine", new Item(new Item.Settings().food(MedicineFoodComponents.MEDICINE)));
+    public static final Item ETIZOLAM = registerItems("etizolam", new Item(new Item.Settings().food(MedicineFoodComponents.MEDICINE)));
+    public static final Item ASPIRIN = registerItems("aspirin", new Item(new Item.Settings().food(MedicineFoodComponents.MEDICINE)));
+    public static final Item PROPOXYPHENE = registerItems("propoxyphene", new Item(new Item.Settings().food(MedicineFoodComponents.MEDICINE)));
+    public static final Item RITALIN = registerItems("ritalin", new Item(new Item.Settings().food(MedicineFoodComponents.MEDICINE)));
+    public static final Item ANTI_BIOTICS = registerItems("anti_biotics", new Item(new Item.Settings().food(MedicineFoodComponents.MEDICINE)));
+    public static final Item ANTI_DEPRESSANTS = registerItems("anti_depressants", new Item(new Item.Settings().food(MedicineFoodComponents.MEDICINE)));
+    public static final Item PLACEBO = registerItems("placebo", new Item(new Item.Settings().food(MedicineFoodComponents.MEDICINE)));
 
     // 食物
     public static final Item APPLE_SODA = registerItems("apple_soda", new Item(new Item.Settings()));
