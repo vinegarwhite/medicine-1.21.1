@@ -3,8 +3,7 @@
   "package": "com.medicine.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "CaughtFishMixin",
-    "ExampleMixin",
+    "FishingBobberEntityAccessor",
     "FishingBobberEntityMixin",
     "LootTableAccessor"
   ],

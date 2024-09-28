@@ -1,4 +1,4 @@
-package com.medicine.util;
+package com.medicine.loot_table;
 
 import com.medicine.Medicine;
 import com.medicine.item.MedicineItems;
@@ -7,10 +7,8 @@ import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.entry.ItemEntry;
-import net.minecraft.loot.entry.LootPoolEntry;
 import net.minecraft.util.Identifier;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -84,6 +82,7 @@ public class MedicineLootTableModifiers {
 
     }
 
+    // 外界调用
     public static void registerMedicineLootTable() {
         modifyLootTable();
         Medicine.LOGGER.info("Registering Medicine Loot Table");

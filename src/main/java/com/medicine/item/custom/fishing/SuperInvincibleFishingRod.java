@@ -1,6 +1,6 @@
 package com.medicine.item.custom.fishing;
 
-import com.medicine.mixin.CaughtFishMixin;
+import com.medicine.mixin.FishingBobberEntityAccessor;
 import com.medicine.tags.MedicineItemTags;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -103,7 +103,7 @@ public class SuperInvincibleFishingRod extends MedicineFishingRodItem {
             return;
 
         // 每0.5秒判断一次是否钓到鱼 ((CaughtFishMixin) player.fishHook).getCaughtFish()表示是否钓到鱼
-        if (player.fishHook != null && world.getTime() >= lastActionTime + 10 && ((CaughtFishMixin) player.fishHook).getCaughtFish()) {
+        if (player.fishHook != null && world.getTime() >= lastActionTime + 10 && ((FishingBobberEntityAccessor) player.fishHook).getCaughtFish()) {
             // 钓到鱼之后收杆 castAgain用于控制是否继续抛竿 lastActionTime与世界时间进行对比来控制抛竿间隔
             if (!world.isClient) {
                 this.use(world, player, hand);

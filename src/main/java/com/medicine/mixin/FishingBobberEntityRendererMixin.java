@@ -11,9 +11,9 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
 /**
- * 这个类是负责抛出鱼竿后鱼线的渲染的 如果不修改的话 鱼线都会从左边抛出 看起来会很违和
- * 主要也就是修改一下物品的判断 源码只判断了原版的鱼竿在哪只手 鱼线跟着拿着原版鱼竿的那只手
- * 所以要修改一下添加一下模组鱼竿的判断
+ * 这个类是负责抛出鱼竿后鱼线的渲染的 如果不修改的话 无论左手还是右手拿着鱼竿 鱼线都会与左手物品相连 看起来会很违和
+ * 源码只判断了原版的鱼竿在哪只手 鱼线跟着拿着原版鱼竿的那只手
+ * 所以要修改一下添加一下模组鱼竿的判断 让鱼线也会跟着拿着模组鱼竿的那只手
  */
 
 @Mixin(FishingBobberEntityRenderer.class)

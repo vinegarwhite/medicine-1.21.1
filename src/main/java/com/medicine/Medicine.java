@@ -4,7 +4,7 @@ import com.medicine.item.MedicineItemGroups;
 import com.medicine.item.MedicineItems;
 import com.medicine.predicate.MedicineModelPredicate;
 import com.medicine.tags.MedicineItemTags;
-import com.medicine.util.MedicineLootTableModifiers;
+import com.medicine.loot_table.MedicineLootTableModifiers;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,16 +24,17 @@ public class Medicine implements ModInitializer {
 		// Proceed with mild caution.
 
 
-		// 注册物品
+		// 注册物品Item
 		MedicineItems.registerMedicineItems();
-		// 注册物品Tag
+		// 注册物品ItemTag
 		MedicineItemTags.registerMedicineTags();
-		// 注册创造模式物品栏
+		// 注册创造模式物品栏ItemGroup
 		MedicineItemGroups.registerMedicineItemGroups();
-		// 注册predicate
+		// 注册谓词Predicate
 		MedicineModelPredicate.registerMedicineModelPredicate();
-		// 注册战利品表
+		// 注册战利品表LootTable
 		MedicineLootTableModifiers.registerMedicineLootTable();
+
 		LOGGER.info("Hello Fabric world!");
 	}
 }

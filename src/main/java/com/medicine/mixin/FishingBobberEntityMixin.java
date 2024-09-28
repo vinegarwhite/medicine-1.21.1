@@ -13,9 +13,7 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 /**
  * 使用Mixin修改原版的浮标实体的判断逻辑
  * 原版的浮标在探测到手上没有拿着原版的钓鱼竿的时候会移除自身
- * 所以只是在注册新的鱼竿的时候用MC官方的FishingRodItem是不够的
- * 浮标实体检测到没有拿着原版鱼竿就会清除自身
- * 所以需要重写判断使其识别模组添加的钓鱼竿
+ * 所以需要重写判断使玩家拿着模组添加的钓鱼竿时也不会移除浮标
  */
 
 @Mixin(FishingBobberEntity.class)
