@@ -1,7 +1,6 @@
 package com.medicine.component;
 
 import net.minecraft.component.type.FoodComponent;
-import net.minecraft.item.Item;
 
 /**
  * 该类用于存放食物的组件 在注册物品时调用

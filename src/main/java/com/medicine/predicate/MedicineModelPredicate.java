@@ -1,10 +1,8 @@
 package com.medicine.predicate;
 
 import com.medicine.Medicine;
-import com.medicine.item.MedicineItems;
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.FishingRodItem;
 import net.minecraft.util.Identifier;
 
 /**

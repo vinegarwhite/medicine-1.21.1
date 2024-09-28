@@ -2,9 +2,9 @@ package com.medicine;
 
 import com.medicine.item.MedicineItemGroups;
 import com.medicine.item.MedicineItems;
+import com.medicine.loot_table.MedicineLootTableModifiers;
 import com.medicine.predicate.MedicineModelPredicate;
 import com.medicine.tags.MedicineItemTags;
-import com.medicine.loot_table.MedicineLootTableModifiers;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
