@@ -17,11 +17,11 @@
 		"main": [
 			"com.medicine.Medicine"
 		],
-		"fabric-datagen": [
-			"com.medicine.MedicineDataGenerator"
-		],
 		"client": [
 			"com.medicine.MedicineClientProxy"
+		],
+		"fabric-datagen": [
+			"com.medicine.MedicineDataGenerator"
 		]
 	},
 	"mixins": [
