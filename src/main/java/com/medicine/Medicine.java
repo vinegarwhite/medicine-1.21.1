@@ -30,8 +30,6 @@ public class Medicine implements ModInitializer {
 		MedicineItemTags.registerMedicineTags();
 		// 注册创造模式物品栏ItemGroup
 		MedicineItemGroups.registerMedicineItemGroups();
-		// 注册谓词Predicate
-		MedicineModelPredicate.registerMedicineModelPredicate();
 		// 注册战利品表LootTable
 		MedicineLootTableModifiers.registerMedicineLootTable();
 

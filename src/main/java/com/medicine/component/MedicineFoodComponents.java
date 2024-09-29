@@ -11,11 +11,11 @@ import net.minecraft.component.type.FoodComponent;
 public class MedicineFoodComponents {
 
     // 药物
-    public static final FoodComponent MEDICINE_PILL = new FoodComponent.Builder().nutrition(0).saturationModifier(0F).snack().build();
+    public static final FoodComponent MEDICINE_COMMON = new FoodComponent.Builder().nutrition(0).saturationModifier(0F).snack().build();
 
     // 食物
-    public static final FoodComponent MEDICINE_FOOD = new FoodComponent.Builder().nutrition(0).saturationModifier(0F).build();
-
+    public static final FoodComponent MEDICINE_FOOD_COMMON = new FoodComponent.Builder().nutrition(0).saturationModifier(0F).build();
+    // 饮料
     public static final FoodComponent MEDICINE_DRINK_COMMON = new FoodComponent.Builder().nutrition(1).saturationModifier(1.0F).alwaysEdible().build();
 
 }

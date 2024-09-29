@@ -1,6 +1,8 @@
 package com.medicine.predicate;
 
 import com.medicine.Medicine;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Identifier;
@@ -9,7 +11,9 @@ import net.minecraft.util.Identifier;
  * 该类用于自定义谓词(Predicate) 可以在物品的model文件中使用 根据谓词切换不同的材质
  * 原版的类叫做ModelPredicateProviderRegistry 可转跳过去进行参考
  * 感谢某位大佬的帮助 我才知道谓词是存放那个类里的 才能以此为基础写自己的谓词
+ * 因为是渲染相关 只能在客户端中调用 不然数据生成会报错
  */
+
 public class MedicineModelPredicate {
 
     static {

@@ -3,7 +3,7 @@
 	"id": "medicine",
 	"version": "${version}",
 	"name": "Medicine",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "药绝模组",
 	"authors": [
 		"ZhouYi"
 	],
@@ -19,6 +19,9 @@
 		],
 		"fabric-datagen": [
 			"com.medicine.MedicineDataGenerator"
+		],
+		"client": [
+			"com.medicine.MedicineClientProxy"
 		]
 	},
 	"mixins": [

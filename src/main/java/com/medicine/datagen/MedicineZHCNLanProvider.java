@@ -8,10 +8,13 @@ import net.minecraft.registry.RegistryWrapper;
 import java.util.concurrent.CompletableFuture;
 
 
-// 此类用于进行中文翻译的数据生成
-public class MedicineENUSLanProvider_zh_cn extends FabricLanguageProvider {
+/**
+ * 此类用于进行中文翻译的数据生成
+ * 由于物品描述很长 最好把游戏界面调小玩
+ */
+public class MedicineZHCNLanProvider extends FabricLanguageProvider {
 
-    public MedicineENUSLanProvider_zh_cn(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+    public MedicineZHCNLanProvider(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
         super(dataOutput, "zh_cn", registryLookup);
     }
 
@@ -43,10 +46,18 @@ public class MedicineENUSLanProvider_zh_cn extends FabricLanguageProvider {
 
         // 食物
         translationBuilder.add(MedicineItems.APPLE_SODA, "苹果汽水");
+        translationBuilder.add("tooltip.medicine.apple_soda", "“亚斯塔禄牌苹果汽水，比同类品牌产品多添加20%纯果汁！”");
+        translationBuilder.add("tooltip.medicine.apple_soda_shift", " ");
         translationBuilder.add(MedicineItems.ORANGE_SODA, "橘子汽水");
+        translationBuilder.add("tooltip.medicine.orange_soda", "“阿斯卡隆牌橘子汽水，喝到就是赚到！”");
+        translationBuilder.add("tooltip.medicine.orange_soda_shift", " ");
         translationBuilder.add(MedicineItems.CANNED_COKE, "罐装可乐");
+        translationBuilder.add("tooltip.medicine.canned_coke", "“The choice of a new generation.”");
+        translationBuilder.add("tooltip.medicine.canned_coke_shift", " ");
         translationBuilder.add(MedicineItems.THICK_EGG_TOAST, "厚蛋土司");
         translationBuilder.add(MedicineItems.POUR_OVER_COFFEE, "手冲咖啡");
+        translationBuilder.add("tooltip.medicine.pour_over_coffee", "又苦又难喝，但是能让人打起精神。");
+        translationBuilder.add("tooltip.medicine.pour_over_coffee_shift", " ");
         translationBuilder.add(MedicineItems.VEGGIE_SALAD, "时蔬沙拉");
         translationBuilder.add(MedicineItems.SAUSAGE_PIZZA, "香肠皮萨");
         translationBuilder.add(MedicineItems.BEEF_BURGER, "牛肉汉堡");
@@ -59,16 +70,36 @@ public class MedicineENUSLanProvider_zh_cn extends FabricLanguageProvider {
         translationBuilder.add(MedicineItems.GRILLED_COLD_NOODLES, "烤冷面");
         translationBuilder.add(MedicineItems.PINEAPPLE_ON_A_STICK, "插着木签的菠萝片");
         translationBuilder.add(MedicineItems.ICED_AMERICANO, "冰美式");
+        translationBuilder.add("tooltip.medicine.iced_americano", "A市的人喝咖啡，像进行一场不需要规则的游戏，随性放任，百无禁忌。");
+        translationBuilder.add("tooltip.medicine.iced_americano_shift", " ");
         translationBuilder.add(MedicineItems.COCONUT_LATTE, "生椰拿铁");
+        translationBuilder.add("tooltip.medicine.coconut_latte", "“我不在咖啡馆，就在去咖啡馆的路上。”");
+        translationBuilder.add("tooltip.medicine.coconut_latte_shift", " ");
         translationBuilder.add(MedicineItems.MOCHA_COFFEE, "摩卡咖啡");
+        translationBuilder.add("tooltip.medicine.mocha_coffee", "让爱恋中的人们了解爱情的甜美和波折，为了告诉我们幸福的简单。");
+        translationBuilder.add("tooltip.medicine.mocha_coffee_shift", " ");
         translationBuilder.add(MedicineItems.WEIRD_BLACK_TEA, "奇怪的红茶");
+        translationBuilder.add("tooltip.medicine.weird_black_tea", "在你拜访你最喜欢的朋友的家时，可以分享给他品尝，不过要提前问好几分钟后会不会有人敲门。");
+        translationBuilder.add("tooltip.medicine.weird_black_tea_shift", " ");
         translationBuilder.add(MedicineItems.MINERAL_WATER, "天然矿泉水");
+        translationBuilder.add("tooltip.medicine.mineral_water", "“添加了一整个元素周期表的微量元素，纯天然矿物质水就选于秀爱牌天然矿泉水。”");
+        translationBuilder.add("tooltip.medicine.mineral_water_shift", " ");
         translationBuilder.add(MedicineItems.ICED_MINERAL_WATER, "冰天然矿泉水");
+        translationBuilder.add("tooltip.medicine.iced_mineral_water", "好吧，它确实应该变成冰水。");
+        translationBuilder.add("tooltip.medicine.iced_mineral_water_shift", " ");
         translationBuilder.add(MedicineItems.INSTANT_NOODLES, "泡面");
         translationBuilder.add(MedicineItems.LEMON_WATER, "柠檬水");
+        translationBuilder.add("tooltip.medicine.lemon_water", "普通的柠檬水，便宜又好喝。");
+        translationBuilder.add("tooltip.medicine.lemon_water_shift", " ");
         translationBuilder.add(MedicineItems.COCONUT_TEA_JELLY, "椰椰茶冻");
+        translationBuilder.add("tooltip.medicine.coconut_tea_jelly", "椰子香味和淡淡的乌龙茶香简直是绝配。");
+        translationBuilder.add("tooltip.medicine.coconut_tea_jelly_shift", " ");
         translationBuilder.add(MedicineItems.MATCHA_LUCKY_ICE, "抹茶幸运冰");
+        translationBuilder.add("tooltip.medicine.matcha_lucky_ice", "虽然我对抹茶不感兴趣，但它真的很好喝。");
+        translationBuilder.add("tooltip.medicine.matcha_lucky_ice_shift", " ");
         translationBuilder.add(MedicineItems.PLUM_WINE, "梅子酒");
+        translationBuilder.add("tooltip.medicine.plum_wine", "“吾身为火，烧尽那些敢于眷恋我的勇者。”");
+        translationBuilder.add("tooltip.medicine.plum_wine_shift", " ");
         translationBuilder.add(MedicineItems.CREAM_CAKE, "小块奶油蛋糕");
         translationBuilder.add(MedicineItems.STRAWBERRY_CAKE, "小块草莓蛋糕");
         translationBuilder.add(MedicineItems.ORANGE_CAKE, "小块香橙蛋糕");
@@ -189,6 +220,8 @@ public class MedicineENUSLanProvider_zh_cn extends FabricLanguageProvider {
         translationBuilder.add("tooltip.medicine.super_invincible_fishing_rod", "§7你已经用钱征服了这个钓鱼游戏，现在去干点别的吧？§r");
         translationBuilder.add("tooltip.medicine.super_invincible_fishing_rod_shift", "§7最多减少25秒的上钩等待时间，可以实现自动钓鱼§r");
         translationBuilder.add(MedicineItems.VIAL_OF_STRANGE_LIQUID, "神秘液体瓶");
+        translationBuilder.add("tooltip.medicine.vial_of_strange_liquid", "内容物看上去十分粘稠。");
+        translationBuilder.add("tooltip.medicine.vial_of_strange_liquid_shift", " ");
         translationBuilder.add(MedicineItems.GOLD_RING, "金戒指");
         translationBuilder.add(MedicineItems.GOLDEN_FISH, "黄金鱼");
 
