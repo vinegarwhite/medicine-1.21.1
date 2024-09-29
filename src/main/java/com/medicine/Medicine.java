@@ -3,6 +3,7 @@ package com.medicine;
 import com.medicine.item.MedicineItemGroups;
 import com.medicine.item.MedicineItems;
 import com.medicine.loot_table.MedicineLootTableModifiers;
+import com.medicine.status_effect.MedicineStatusEffects;
 import com.medicine.tags.MedicineItemTags;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
@@ -31,6 +32,8 @@ public class Medicine implements ModInitializer {
 		MedicineItemGroups.registerMedicineItemGroups();
 		// 注册战利品表LootTable
 		MedicineLootTableModifiers.registerMedicineLootTable();
+		// 注册状态效果
+		MedicineStatusEffects.registerMedicineStatusEffects();
 
 		LOGGER.info("Hello Fabric world!");
 	}

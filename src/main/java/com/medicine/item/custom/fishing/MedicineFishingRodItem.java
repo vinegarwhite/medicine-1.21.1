@@ -16,7 +16,7 @@ public class MedicineFishingRodItem extends FishingRodItem {
         super(settings);
     }
 
-    // 默认的物品描述
+    // 批量添加物品描述
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         MedicineTooltipUtils.setToolTips(this, tooltip);

@@ -285,7 +285,6 @@ public class MedicineZHCNLanProvider extends FabricLanguageProvider {
         translationBuilder.add("tooltip.medicine.golden_fish", "开局就送1000抽，如果你抽到了这只鱼，那就说明你是真正的欧皇！");
         translationBuilder.add("tooltip.medicine.golden_fish_shift", "");
 
-
         // 创造模式物品栏
         translationBuilder.add("itemGroup.medicine_group", "药物");
         translationBuilder.add("itemGroup.food_group", "食物");
@@ -294,6 +293,9 @@ public class MedicineZHCNLanProvider extends FabricLanguageProvider {
         translationBuilder.add("itemGroup.collectible_group", "收藏品");
         translationBuilder.add("itemGroup.special_collectible_group", "特殊藏品");
         translationBuilder.add("itemGroup.fishing_group", "钓鱼");
+
+        // 状态效果
+        translationBuilder.add("effect.medicine.over_stuffed", "饱腹");
 
         // 未完成提示
         translationBuilder.add("tooltip.medicine.unfinished", "如果你看到这条信息，说明这个物品可能还没做完");
