@@ -13,12 +13,4 @@ public class PlumWine extends MedicineDrinkItem {
         super(settings);
     }
 
-    @Override
-    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        if(!Screen.hasShiftDown()) {
-            tooltip.add(Text.translatable("tooltip.medicine.plum_wine"));
-        }else{
-            tooltip.add(Text.translatable("tooltip.medicine.plum_wine_shift"));
-        }
-    }
 }

@@ -13,12 +13,4 @@ public class PourOverCoffee extends MedicineDrinkItem {
         super(settings);
     }
 
-    @Override
-    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        if(!Screen.hasShiftDown()) {
-            tooltip.add(Text.translatable("tooltip.medicine.pour_over_coffee"));
-        }else{
-            tooltip.add(Text.translatable("tooltip.medicine.pour_over_coffee_shift"));
-        }
-    }
 }

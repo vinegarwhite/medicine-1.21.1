@@ -13,12 +13,4 @@ public class IcedMineralWater extends MedicineDrinkItem {
         super(settings);
     }
 
-    @Override
-    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        if(!Screen.hasShiftDown()) {
-            tooltip.add(Text.translatable("tooltip.medicine.iced_mineral_water"));
-        }else{
-            tooltip.add(Text.translatable("tooltip.medicine.iced_mineral_water_shift"));
-        }
-    }
 }

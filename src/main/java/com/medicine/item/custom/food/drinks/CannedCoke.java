@@ -13,12 +13,4 @@ public class CannedCoke extends MedicineDrinkItem {
         super(settings);
     }
 
-    @Override
-    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        if(!Screen.hasShiftDown()) {
-            tooltip.add(Text.translatable("tooltip.medicine.canned_coke"));
-        }else{
-            tooltip.add(Text.translatable("tooltip.medicine.canned_coke_shift"));
-        }
-    }
 }

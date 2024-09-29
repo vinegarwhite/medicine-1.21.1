@@ -1,5 +1,6 @@
 package com.medicine.item.custom.food;
 
+import com.medicine.util.MedicineTooltipUtils;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipType;
@@ -17,7 +18,7 @@ public class MedicineDrinkItem extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        tooltip.add(Text.translatable("tooltip.medicine.unfinished"));
+        MedicineTooltipUtils.setToolTips(this, tooltip);
     }
 
     // 把使用物品的动作改为饮用

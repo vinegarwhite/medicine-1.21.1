@@ -13,12 +13,4 @@ public class VialOfStrangeLiquid extends MedicineDrinkItem {
         super(settings);
     }
 
-    @Override
-    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        if(!Screen.hasShiftDown()) {
-            tooltip.add(Text.translatable("tooltip.medicine.vial_of_strange_liquid"));
-        }else{
-            tooltip.add(Text.translatable("tooltip.medicine.vial_of_strange_liquid_shift"));
-        }
-    }
 }

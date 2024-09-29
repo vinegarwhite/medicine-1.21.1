@@ -13,12 +13,4 @@ public class CoconutTeaJelly extends MedicineDrinkItem {
         super(settings);
     }
 
-    @Override
-    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        if(!Screen.hasShiftDown()) {
-            tooltip.add(Text.translatable("tooltip.medicine.coconut_tea_jelly"));
-        }else{
-            tooltip.add(Text.translatable("tooltip.medicine.coconut_tea_jelly_shift"));
-        }
-    }
 }
