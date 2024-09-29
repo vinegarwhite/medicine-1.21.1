@@ -1,5 +1,6 @@
 package com.medicine.item.custom.food;
 
+import com.medicine.item.custom.MedicineItem;
 import com.medicine.util.MedicineTooltipUtils;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -11,14 +12,9 @@ import net.minecraft.util.UseAction;
 
 import java.util.List;
 
-public class MedicineDrinkItem extends Item {
+public class MedicineDrinkItem extends MedicineItem {
     public MedicineDrinkItem(Settings settings) {
         super(settings);
-    }
-
-    @Override
-    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        MedicineTooltipUtils.setToolTips(this, tooltip);
     }
 
     // 把使用物品的动作改为饮用

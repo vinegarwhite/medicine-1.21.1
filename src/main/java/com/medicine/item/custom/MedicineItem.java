@@ -1,22 +1,19 @@
-package com.medicine.item.custom.fishing;
+package com.medicine.item.custom;
 
 import com.medicine.util.MedicineTooltipUtils;
-import net.minecraft.item.FishingRodItem;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.text.Text;
 
 import java.util.List;
 
-/**
- * 模组里面钓鱼竿的父类
- */
-public class MedicineFishingRodItem extends FishingRodItem {
-    public MedicineFishingRodItem(Settings settings) {
+public class MedicineItem extends Item {
+    public MedicineItem(Settings settings) {
         super(settings);
     }
 
-    // 默认的物品描述
+    // 实现自动添加对应的描述信息 原版直接添加tooltip不会换行 所以自己封装了个方法实现换行 详情见setToolTips内代码
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         MedicineTooltipUtils.setToolTips(this, tooltip);

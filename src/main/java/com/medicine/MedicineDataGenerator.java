@@ -1,8 +1,8 @@
 package com.medicine;
 
-import com.medicine.datagen.MedicineZHCNLanProvider;
 import com.medicine.datagen.MedicineItemTagsProvider;
 import com.medicine.datagen.MedicineModelsProvider;
+import com.medicine.datagen.MedicineZHCNLanProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 

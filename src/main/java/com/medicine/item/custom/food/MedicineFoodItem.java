@@ -1,5 +1,6 @@
 package com.medicine.item.custom.food;
 
+import com.medicine.item.custom.MedicineItem;
 import com.medicine.util.MedicineTooltipUtils;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.Item;
@@ -10,7 +11,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class MedicineFoodItem extends Item {
+public class MedicineFoodItem extends MedicineItem {
     public MedicineFoodItem(Settings settings) {
         super(settings);
     }
@@ -21,9 +22,4 @@ public class MedicineFoodItem extends Item {
 
     }
 
-    // 实现自动添加对应的描述信息 原版直接添加tooltip不会换行 所以自己封装了个方法实现换行 详情见setToolTips内代码
-    @Override
-    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        MedicineTooltipUtils.setToolTips(this, tooltip);
-    }
 }

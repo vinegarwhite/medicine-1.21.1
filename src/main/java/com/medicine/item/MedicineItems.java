@@ -6,7 +6,6 @@ import com.medicine.item.custom.fishing.CarbonFiberFishingRod;
 import com.medicine.item.custom.fishing.FiberglassFishingRod;
 import com.medicine.item.custom.fishing.SuperInvincibleFishingRod;
 import com.medicine.item.custom.fishing.TitaniumAlloyFishingRod;
-import com.medicine.item.custom.food.MedicineFoodItem;
 import com.medicine.item.custom.food.drinks.*;
 import com.medicine.item.custom.food.foods.*;
 import net.minecraft.item.Item;
