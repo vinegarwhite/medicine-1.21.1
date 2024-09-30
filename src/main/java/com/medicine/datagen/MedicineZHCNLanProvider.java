@@ -1,5 +1,6 @@
 package com.medicine.datagen;
 
+import com.medicine.attribute.MedicineEntityAttributes;
 import com.medicine.item.MedicineItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
@@ -297,7 +298,22 @@ public class MedicineZHCNLanProvider extends FabricLanguageProvider {
         // 状态效果
         translationBuilder.add("effect.medicine.over_stuffed", "饱腹");
 
+        // 玩家属性
+        translationBuilder.add("attribute.name.generic.mental_state","精神状态");
+        translationBuilder.add("attribute.name.generic.severity","严重程度");
+        translationBuilder.add("attribute.name.generic.work_ability","工作能力");
+        translationBuilder.add("attribute.name.generic.physical_fitness","身体素质");
+        translationBuilder.add("attribute.name.generic.writing_skill","写作技巧");
+        translationBuilder.add("attribute.name.generic.money","金钱");
+        translationBuilder.add("attribute.name.generic.medicine_price","药价");
+        translationBuilder.add("attribute.name.generic.medicine_price_increase","药价涨幅");
+        translationBuilder.add("attribute.name.generic.salary","本周工资");
+        translationBuilder.add("attribute.name.generic.work_progress","工作进度");
+        translationBuilder.add("attribute.name.generic.achieved_work_progress","已完成工作进度");
+        translationBuilder.add("attribute.name.generic.popularity","平台人气");
+
+
         // 未完成提示
-        translationBuilder.add("tooltip.medicine.unfinished", "如果你看到这条信息，说明这个物品可能还没做完");
+        translationBuilder.add("tooltip.medicine.unfinished", "如果你看到这条信息，说明这个部分可能还没做完");
     }
 }

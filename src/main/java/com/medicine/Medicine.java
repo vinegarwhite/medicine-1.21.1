@@ -1,5 +1,7 @@
 package com.medicine;
 
+import com.medicine.attribute.MedicineEntityAttributes;
+import com.medicine.hud.MedicineHUDRender;
 import com.medicine.item.MedicineItemGroups;
 import com.medicine.item.MedicineItems;
 import com.medicine.loot_table.MedicineLootTableModifiers;
@@ -24,16 +26,21 @@ public class Medicine implements ModInitializer {
 		// Proceed with mild caution.
 
 
-		// 注册物品Item
+		// 注册物品(Item)
 		MedicineItems.registerMedicineItems();
-		// 注册物品ItemTag
+		// 注册物品(ItemTag)
 		MedicineItemTags.registerMedicineTags();
-		// 注册创造模式物品栏ItemGroup
+		// 注册创造模式物品栏(ItemGroup)
 		MedicineItemGroups.registerMedicineItemGroups();
-		// 注册战利品表LootTable
+		// 注册战利品表(LootTable)
 		MedicineLootTableModifiers.registerMedicineLootTable();
-		// 注册状态效果
+		// 注册状态效果(StatusEffect)
 		MedicineStatusEffects.registerMedicineStatusEffects();
+		// 注册属性(Attribute)
+		MedicineEntityAttributes.registerEntityAttribute();
+		// 注册HUD
+		MedicineHUDRender.registerMedicineHUD();
+
 
 		LOGGER.info("Hello Fabric world!");
 	}
