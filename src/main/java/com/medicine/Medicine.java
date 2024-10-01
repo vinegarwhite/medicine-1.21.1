@@ -39,7 +39,6 @@ public class Medicine implements ModInitializer {
 		MedicineEntityAttributes.registerEntityAttribute();
 
 
-
 		LOGGER.info("Hello Fabric world!");
 	}
 }

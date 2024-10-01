@@ -1,11 +1,14 @@
 package com.medicine.mixin;
 
 import com.medicine.attribute.MedicineEntityAttributes;
+import com.medicine.status_effect.MedicineStatusEffects;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 /**
@@ -15,6 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(PlayerEntity.class)
 public abstract class PlayerEntityMixin {
 
+    // 为玩家添加属性
     @Inject(method = "createPlayerAttributes", at = @At("RETURN"), cancellable = true)
     private static void modifyPlayerAttributes(CallbackInfoReturnable<DefaultAttributeContainer.Builder> cir) {
         // 获取返回的属性构建器
@@ -46,6 +50,18 @@ public abstract class PlayerEntityMixin {
         builder.add(MedicineEntityAttributes.GENERIC_POPULARITY, 1000.0);
 
         cir.setReturnValue(builder);
+    }
+
+    // 饱食度满了后获得饱腹
+    @Inject(method = "tick", at = @At("RETURN"))
+    private void isOverStuffed(CallbackInfo ci) {
+        PlayerEntity player = (PlayerEntity) (Object) this;
+
+        int foodLevel = player.getHungerManager().getFoodLevel();
+        if(foodLevel >= 20 && !player.isCreative() && !player.isSpectator()){
+            player.addStatusEffect(new StatusEffectInstance(
+                    MedicineStatusEffects.OVER_STUFFED, -1, 0, false, false, false));
+        }
     }
 }
 

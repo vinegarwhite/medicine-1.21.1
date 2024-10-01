@@ -1,6 +1,6 @@
 package com.medicine.item.custom.food;
 
-import com.medicine.item.custom.MedicineItem;
+import com.medicine.item.MedicineItem;
 import com.medicine.status_effect.MedicineStatusEffects;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -20,22 +20,6 @@ import net.minecraft.world.World;
 public class MedicineDrinkItem extends MedicineItem {
     public MedicineDrinkItem(Settings settings) {
         super(settings);
-    }
-
-    @Override
-    public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
-        // 饱腹buff判断逻辑
-        if (user.isPlayer()) {
-            // 获取玩家的饱食度 如果满了则获得饱腹
-            float foodLevel = ((PlayerEntity) user).getHungerManager().getFoodLevel();
-
-            if (foodLevel >= 20)
-                user.addStatusEffect(new StatusEffectInstance(
-                        MedicineStatusEffects.OVER_STUFFED, -1, 0, false, false, false));
-
-        }
-
-        return super.finishUsing(stack, world, user);
     }
 
     // 把使用物品的动作改为饮用

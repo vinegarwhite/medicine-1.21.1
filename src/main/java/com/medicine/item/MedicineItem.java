@@ -1,4 +1,4 @@
-package com.medicine.item.custom;
+package com.medicine.item;
 
 import com.medicine.util.MedicineTooltipUtils;
 import net.minecraft.item.Item;

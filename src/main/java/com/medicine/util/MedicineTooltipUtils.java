@@ -32,20 +32,22 @@ public class MedicineTooltipUtils {
 
         if (Screen.hasShiftDown()) {
             // 按下shift显示数值信息 把字符串切开 一行一行添加进去以实现自动换行
-            ArrayList<String> tooltipTextShiftList = splitter(tooltipTextShift, 20);
+            ArrayList<String> tooltipTextShiftList = splitter(tooltipTextShift);
             for (String text : tooltipTextShiftList)
                 tooltip.add(Text.of("§7" + text + "§r"));
         } else {
             // 未按下按键则显示物品描述信息
-            ArrayList<String> tooltipTextList = splitter(tooltipText, 20);
+            ArrayList<String> tooltipTextList = splitter(tooltipText);
             for (String text : tooltipTextList)
                 tooltip.add(Text.of("§7" + text + "§r"));
         }
     }
 
     // 将String 按照一定长度分割后放到ArrayList
-    private static ArrayList<String> splitter(String str, int len){
+    private static ArrayList<String> splitter(String str){
         ArrayList<String> result = new ArrayList<>();
+        // 每行的字符数
+        int len = 20;
 
         while (!str.isEmpty()) {
             if (str.length() < len) {

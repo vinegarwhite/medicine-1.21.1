@@ -7,6 +7,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.text.OrderedText;
 import net.minecraft.text.Text;
 
 /**
@@ -55,7 +56,7 @@ public class MedicineHUDRender {
             String workProgressText = Text.translatable("attribute.name.generic.work_progress").getString() + " ";
             String achievedWorkProgressText = Text.translatable("attribute.name.generic.achieved_work_progress").getString() + " ";
             String popularityText = Text.translatable("attribute.name.generic.popularity").getString() + " ";
-
+            
             // 精神状态
             context.drawCenteredTextWithShadow(textRenderer, mentalStateText, width / 2, 5, 0xFFFFFF);
             context.drawCenteredTextWithShadow(textRenderer, String.valueOf(mentalState), width / 2, 12, 0xFFFFFF);
