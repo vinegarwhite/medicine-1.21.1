@@ -2,6 +2,7 @@ package com.medicine.hud;
 
 import com.medicine.Medicine;
 import com.medicine.attribute.MedicineEntityAttributes;
+import com.medicine.util.MedicineServerTickHandler;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
@@ -24,7 +25,6 @@ public class MedicineHUDRender {
         // 获取缩放后的长宽
         int width = client.getWindow().getScaledWidth();
         int height = client.getWindow().getScaledHeight();
-
 
         if (player != null) {
 
@@ -51,48 +51,52 @@ public class MedicineHUDRender {
             String writingSkillText = Text.translatable("attribute.name.generic.writing_skill").getString() + " ";
             String moneyText = Text.translatable("attribute.name.generic.money").getString() + " ";
             String medicinePriceText = Text.translatable("attribute.name.generic.medicine_price").getString() + " ";
-            String medicinePriceIncreaseText = Text.translatable("attribute.name.generic.medicine_price_increase").getString() + " ";
             String salaryText = Text.translatable("attribute.name.generic.salary").getString() + " ";
             String workProgressText = Text.translatable("attribute.name.generic.work_progress").getString() + " ";
-            String achievedWorkProgressText = Text.translatable("attribute.name.generic.achieved_work_progress").getString() + " ";
             String popularityText = Text.translatable("attribute.name.generic.popularity").getString() + " ";
-            
+
+            int month = MedicineServerTickHandler.getMonth();
+            int day = MedicineServerTickHandler.getDay();
+            long weeks = MedicineServerTickHandler.getWeeks();
+            String dayOfWeek = MedicineServerTickHandler.getDayOfWeek();
+            int hours = MedicineServerTickHandler.getHours();
+            int minutes = MedicineServerTickHandler.getMinutes();
+            context.drawTextWithShadow(textRenderer, "%d月%d日 第%d周".formatted(month, day, weeks), 5, 5, 0xFFFFFF);
+            context.drawTextWithShadow(textRenderer, "星期%s %d:%02d".formatted(dayOfWeek, hours, minutes), 5, 15, 0xFFFFFF);
+
             // 精神状态
             context.drawCenteredTextWithShadow(textRenderer, mentalStateText, width / 2, 5, 0xFFFFFF);
-            context.drawCenteredTextWithShadow(textRenderer, String.valueOf(mentalState), width / 2, 12, 0xFFFFFF);
+            context.drawCenteredTextWithShadow(textRenderer, String.valueOf(mentalState), width / 2, 15, 0xFFFFFF);
             // 所持金钱
-            context.drawTextWithShadow(textRenderer, moneyText, 5, height / 2 - 50,0xFFFFFF);
-            context.drawTextWithShadow(textRenderer, String.valueOf(money), 5 + textRenderer.getWidth(moneyText), height / 2 - 50,0xFFFFFF);
+            context.drawTextWithShadow(textRenderer, moneyText, 5, height / 2 - 50, 0xFFFFFF);
+            context.drawTextWithShadow(textRenderer, String.valueOf(money), 5 + textRenderer.getWidth(moneyText), height / 2 - 50, 0xFFFFFF);
             // 药物价格
-            context.drawTextWithShadow(textRenderer, medicinePriceText, 5, height / 2 - 40,0xFFFFFF);
-            context.drawTextWithShadow(textRenderer, String.valueOf(medicinePrice), 5 + textRenderer.getWidth(medicinePriceText), height / 2 - 40,0xFFFFFF);
+            context.drawTextWithShadow(textRenderer, medicinePriceText, 5, height / 2 - 40, 0xFFFFFF);
+            context.drawTextWithShadow(textRenderer, String.valueOf(medicinePrice), 5 + textRenderer.getWidth(medicinePriceText), height / 2 - 40, 0xFFFFFF);
             // 本周工资
-            context.drawTextWithShadow(textRenderer, salaryText, 5, height / 2 - 30,0xFFFFFF);
-            context.drawTextWithShadow(textRenderer, String.valueOf(salary), 5 + textRenderer.getWidth(salaryText), height / 2 - 30,0xFFFFFF);
+            context.drawTextWithShadow(textRenderer, salaryText, 5, height / 2 - 30, 0xFFFFFF);
+            context.drawTextWithShadow(textRenderer, String.valueOf(salary), 5 + textRenderer.getWidth(salaryText), height / 2 - 30, 0xFFFFFF);
             // 工作进度
-            context.drawTextWithShadow(textRenderer, workProgressText, 5, height / 2 - 20,0xFFFFFF);
-            context.drawTextWithShadow(textRenderer, achievedWorkProgress + "/" + workProgress, 5 + textRenderer.getWidth(workProgressText), height / 2 - 20,0xFFFFFF);
+            context.drawTextWithShadow(textRenderer, workProgressText, 5, height / 2 - 20, 0xFFFFFF);
+            context.drawTextWithShadow(textRenderer, achievedWorkProgress + "/" + workProgress, 5 + textRenderer.getWidth(workProgressText), height / 2 - 20, 0xFFFFFF);
             // 平台人气
-            context.drawTextWithShadow(textRenderer, popularityText, 5, height / 2 - 10,0xFFFFFF);
-            context.drawTextWithShadow(textRenderer, String.valueOf(popularity), 5 + textRenderer.getWidth(popularityText), height / 2 - 10,0xFFFFFF);
+            context.drawTextWithShadow(textRenderer, popularityText, 5, height / 2 - 10, 0xFFFFFF);
+            context.drawTextWithShadow(textRenderer, String.valueOf(popularity), 5 + textRenderer.getWidth(popularityText), height / 2 - 10, 0xFFFFFF);
             // 严重程度
-            context.drawTextWithShadow(textRenderer, severityText, 5, height / 2 + 10,0xFFFFFF);
-            context.drawTextWithShadow(textRenderer, String.valueOf(severity), 5 + textRenderer.getWidth(severityText), height / 2 + 10,0xFFFFFF);
+            context.drawTextWithShadow(textRenderer, severityText, 5, height / 2 + 10, 0xFFFFFF);
+            context.drawTextWithShadow(textRenderer, String.valueOf(severity), 5 + textRenderer.getWidth(severityText), height / 2 + 10, 0xFFFFFF);
             // 工作能力
-            context.drawTextWithShadow(textRenderer, workAbilityText, 5, height / 2 + 20,0xFFFFFF);
-            context.drawTextWithShadow(textRenderer, String.valueOf(workAbility), 5 + textRenderer.getWidth(workAbilityText), height / 2 + 20,0xFFFFFF);
+            context.drawTextWithShadow(textRenderer, workAbilityText, 5, height / 2 + 20, 0xFFFFFF);
+            context.drawTextWithShadow(textRenderer, String.valueOf(workAbility), 5 + textRenderer.getWidth(workAbilityText), height / 2 + 20, 0xFFFFFF);
             // 身体素质
-            context.drawTextWithShadow(textRenderer, physicalFitnessText, 5, height / 2 + 30,0xFFFFFF);
-            context.drawTextWithShadow(textRenderer, String.valueOf(physicalFitness), 5 + textRenderer.getWidth(physicalFitnessText), height / 2 + 30,0xFFFFFF);
+            context.drawTextWithShadow(textRenderer, physicalFitnessText, 5, height / 2 + 30, 0xFFFFFF);
+            context.drawTextWithShadow(textRenderer, String.valueOf(physicalFitness), 5 + textRenderer.getWidth(physicalFitnessText), height / 2 + 30, 0xFFFFFF);
             // 写作技巧
-            context.drawTextWithShadow(textRenderer, writingSkillText, 5, height / 2 + 40,0xFFFFFF);
-            context.drawTextWithShadow(textRenderer, String.valueOf(writingSkill), 5 + textRenderer.getWidth(writingSkillText), height / 2 + 40,0xFFFFFF);
+            context.drawTextWithShadow(textRenderer, writingSkillText, 5, height / 2 + 40, 0xFFFFFF);
+            context.drawTextWithShadow(textRenderer, String.valueOf(writingSkill), 5 + textRenderer.getWidth(writingSkillText), height / 2 + 40, 0xFFFFFF);
         }
 
     }
-
-
-
 
     public static void registerMedicineHUD() {
         HudRenderCallback.EVENT.register((context, tickDelta) -> renderAttributes(context));

@@ -6,6 +6,7 @@ import com.medicine.item.MedicineItems;
 import com.medicine.loot_table.MedicineLootTableModifiers;
 import com.medicine.status_effect.MedicineStatusEffects;
 import com.medicine.tags.MedicineItemTags;
+import com.medicine.util.MedicineServerTickHandler;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,7 +38,6 @@ public class Medicine implements ModInitializer {
 		MedicineStatusEffects.registerMedicineStatusEffects();
 		// 注册属性(Attribute)
 		MedicineEntityAttributes.registerEntityAttribute();
-
 
 		LOGGER.info("Hello Fabric world!");
 	}
