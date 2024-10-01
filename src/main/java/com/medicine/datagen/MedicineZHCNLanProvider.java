@@ -1,6 +1,5 @@
 package com.medicine.datagen;
 
-import com.medicine.attribute.MedicineEntityAttributes;
 import com.medicine.item.MedicineItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
@@ -304,8 +303,8 @@ public class MedicineZHCNLanProvider extends FabricLanguageProvider {
         translationBuilder.add("attribute.name.generic.work_ability","工作能力");
         translationBuilder.add("attribute.name.generic.physical_fitness","身体素质");
         translationBuilder.add("attribute.name.generic.writing_skill","写作技巧");
-        translationBuilder.add("attribute.name.generic.money","金钱");
-        translationBuilder.add("attribute.name.generic.medicine_price","药价");
+        translationBuilder.add("attribute.name.generic.money","所持金钱");
+        translationBuilder.add("attribute.name.generic.medicine_price","药物价格");
         translationBuilder.add("attribute.name.generic.medicine_price_increase","药价涨幅");
         translationBuilder.add("attribute.name.generic.salary","本周工资");
         translationBuilder.add("attribute.name.generic.work_progress","工作进度");

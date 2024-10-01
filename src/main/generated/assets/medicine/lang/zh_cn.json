@@ -1,9 +1,9 @@
 {
   "attribute.name.generic.achieved_work_progress": "已完成工作进度",
-  "attribute.name.generic.medicine_price": "药价",
+  "attribute.name.generic.medicine_price": "药物价格",
   "attribute.name.generic.medicine_price_increase": "药价涨幅",
   "attribute.name.generic.mental_state": "精神状态",
-  "attribute.name.generic.money": "金钱",
+  "attribute.name.generic.money": "所持金钱",
   "attribute.name.generic.physical_fitness": "身体素质",
   "attribute.name.generic.popularity": "平台人气",
   "attribute.name.generic.salary": "本周工资",

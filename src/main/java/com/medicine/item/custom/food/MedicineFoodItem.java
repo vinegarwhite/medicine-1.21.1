@@ -2,20 +2,11 @@ package com.medicine.item.custom.food;
 
 import com.medicine.item.custom.MedicineItem;
 import com.medicine.status_effect.MedicineStatusEffects;
-import com.medicine.status_effect.effects.Overstuffed;
-import com.medicine.util.MedicineTooltipUtils;
-import net.minecraft.component.DataComponentTypes;
-import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.tooltip.TooltipType;
-import net.minecraft.text.Text;
 import net.minecraft.world.World;
-
-import java.util.List;
 
 public class MedicineFoodItem extends MedicineItem {
     public MedicineFoodItem(Settings settings) {

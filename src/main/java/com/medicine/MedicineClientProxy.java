@@ -1,5 +1,6 @@
 package com.medicine;
 
+import com.medicine.hud.MedicineHUDRender;
 import com.medicine.predicate.MedicineModelPredicate;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
@@ -16,5 +17,7 @@ public class MedicineClientProxy implements ClientModInitializer {
     public void onInitializeClient() {
         // 注册谓词Predicate
         MedicineModelPredicate.registerMedicineModelPredicate();
+        // 注册HUD
+        MedicineHUDRender.registerMedicineHUD();
     }
 }

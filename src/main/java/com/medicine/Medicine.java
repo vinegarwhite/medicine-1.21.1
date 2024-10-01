@@ -1,7 +1,6 @@
 package com.medicine;
 
 import com.medicine.attribute.MedicineEntityAttributes;
-import com.medicine.hud.MedicineHUDRender;
 import com.medicine.item.MedicineItemGroups;
 import com.medicine.item.MedicineItems;
 import com.medicine.loot_table.MedicineLootTableModifiers;
@@ -38,8 +37,7 @@ public class Medicine implements ModInitializer {
 		MedicineStatusEffects.registerMedicineStatusEffects();
 		// 注册属性(Attribute)
 		MedicineEntityAttributes.registerEntityAttribute();
-		// 注册HUD
-		MedicineHUDRender.registerMedicineHUD();
+
 
 
 		LOGGER.info("Hello Fabric world!");
